@@ -39,7 +39,7 @@
           // reapply CSS when window changes in size
           $(window).resize(function(){
 
-            //reset dynamic variables when window resizes
+            //reset variables
             thisHeight    = $this.height(),
             thisWidth     = $this.outerWidth(),
             parentHeight  = $parent.height(),
@@ -47,6 +47,7 @@
             leftValue     = (parentWidth - thisWidth)/2,
             topValue      = (parentHeight - thisHeight)/2;
 
+            //reapply CSS
             setCSS();
 
           });
