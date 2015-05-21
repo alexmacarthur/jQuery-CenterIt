@@ -3,11 +3,11 @@
       /**
        * Title: CenterIt
        * Author: Alex MacArthur
-       * Version: 1.1
+       * Version: 1.2
        * Description: A small plugin that centers an element within a parent element vertically and horizontally.
        */
 
-      $.fn.centerIt = function(){
+      $.fn.centerIt = function(options){
 
           // get all the ncessary variables set
           var $this         = $(this),
@@ -19,10 +19,15 @@
               leftValue     = (parentWidth - thisWidth)/2,
               topValue      = (parentHeight - thisHeight)/2;
 
+          var settings = $.extend({
+              position: "relative"
+
+          }, options);
+
           function setCSS(){
             // apply relative positioning to parent so 'top' & 'left' values will have correct reference point
             $parent.css({
-                'position'    : 'relative'
+                'position'    : settings.position
             });
 
             // apply css to element to center it relative to parent
