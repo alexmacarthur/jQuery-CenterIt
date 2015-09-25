@@ -8,8 +8,8 @@ module.exports = function(grunt) {
 		uglify: {
 			dist: {
 				files: {
-					'js/jquery.centerit.min.js': [
-						'js/jquery.centerit.js'
+					'jquery.centerit.min.js': [
+						'jquery.centerit.js'
 					]
 				}
 			}
@@ -22,15 +22,11 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: [
-					'js/jquery.centerit.js'
+					'jquery.centerit.js'
 				],
 				tasks: [
 					'uglify'
-				],
-				options: {
-					port: 8000,
-					livereload: true
-				}
+				]
 			},
 		}
 	});
