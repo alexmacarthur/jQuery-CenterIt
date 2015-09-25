@@ -1,10 +1,10 @@
 (function($) {
 
-      /**
-       * Title: CenterIt
-       * Author: Alex MacArthur
-       * Version: 1.2
-       * Description: A small plugin that centers an element within a parent element vertically and horizontally.
+       /**
+       * jQuery CenterIt
+       * @author Alex MacArthur (http://macarthur.me)
+       * @copyright 2015 Alex MacArthur
+       * @description A small plugin that centers an element within a parent element vertically and horizontally.
        */
 
       $.fn.centerIt = function(options){
