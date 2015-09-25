@@ -10,14 +10,14 @@
       $.fn.centerIt = function(options){
 
           // get all the ncessary variables set
-          var $this         = $(this),
-              $parent       = $this.parent();
-              thisHeight    = $this.height(),
-              thisWidth     = $this.outerWidth(),
-              parentHeight  = $parent.height(),
-              parentWidth   = $parent.outerWidth(),
-              leftValue     = (parentWidth - thisWidth)/2,
-              topValue      = (parentHeight - thisHeight)/2;
+          var $this         = $(this);
+          var $parent       = $this.parent();
+          var thisHeight    = $this.height();
+          var thisWidth     = $this.outerWidth();
+          var parentHeight  = $parent.height();
+          var parentWidth   = $parent.outerWidth();
+          var leftValue     = (parentWidth - thisWidth)/2;
+          var topValue      = (parentHeight - thisHeight)/2;
 
           var settings = $.extend({
               position: "relative"
@@ -45,11 +45,11 @@
           $(window).resize(function(){
 
             //reset variables
-            thisHeight    = $this.height(),
-            thisWidth     = $this.outerWidth(),
-            parentHeight  = $parent.height(),
-            parentWidth   = $parent.outerWidth(),
-            leftValue     = (parentWidth - thisWidth)/2,
+            thisHeight    = $this.height();
+            thisWidth     = $this.outerWidth();
+            parentHeight  = $parent.height();
+            parentWidth   = $parent.outerWidth();
+            leftValue     = (parentWidth - thisWidth)/2;
             topValue      = (parentHeight - thisHeight)/2;
 
             //reapply CSS
@@ -57,5 +57,5 @@
 
           });
       };
-        
+
 })(jQuery);

@@ -4,6 +4,35 @@ module.exports = function(grunt) {
 
 		pkg: grunt.file.readJSON('package.json'),
 
+		// chech our JS
+		jshint: {
+			options: {
+				"bitwise": true,
+				"browser": true,
+				"curly": true,
+				"eqeqeq": true,
+				"eqnull": true,
+				"esnext": true,
+				"immed": true,
+				"jquery": true,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"node": true,
+				"strict": false,
+				"trailing": true,
+				"undef": true,
+				"globals": {
+					"jQuery": true,
+					"alert": true
+				}
+			},
+			all: [
+				'gruntfile.js',
+				'jquery.centerit.js'
+			]
+		},
+
 		// concat and minify our JavaScript
 		uglify: {
 			dist: {
@@ -22,9 +51,10 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: [
-					'jquery.centerit.js'
+					'<%= jshint.all %>'
 				],
 				tasks: [
+					'jshint',
 					'uglify'
 				]
 			},
@@ -35,6 +65,7 @@ module.exports = function(grunt) {
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	grunt.registerTask('default', [
-		'uglify',
+		'jshint',
+		'uglify'
 	]);
 };
